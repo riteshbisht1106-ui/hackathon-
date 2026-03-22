@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Cultural Heritage Platform of India</title>
+    <meta name="description"
+        content="Digitally preserving and showcasing India’s rich cultural heritage. Experience the Taj Mahal, Hampi, and more.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Heritage<span class="accent">India</span></a>
+        
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#featured">Explore</a></li>
+                    <li><a href="#map">Map</a></li>
+                    <li><a href="#heritage-list">Heritage Sites</a></li>
+                    <li><a href="#story">Stories</a></li>
+                    <li><a href="#donate" class="btn-primary-small">Donate</a></li>
+                </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">India’s Heritage — <br>Preserved Digitally, <span class="highlight">Felt
+                    Emotionally</span></h1>
+            <p class="hero-subtitle fade-in delay-1">Walk through history. Experience the grandeur of civilization.</p>
+            <div class="hero-buttons fade-in delay-2">
+                <a href="#immersive" class="btn-primary">Explore Virtual Tours</a>
+                <a href="#map" class="btn-secondary">Discover Heritage Map</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </header>                   
+
+    <!-- Data & Impact Stats -->
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" data-target="44">0</span>
+                <span class="stat-label">UNESCO World<br>Heritage Sites</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="5000">0</span><span class="stat-symbol">+</span>
+                <span class="stat-label">Years of<br>Civilization</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="100">0</span><span class="stat-symbol">M+</span>
+                <span class="stat-label">Annual<br>Visitors</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Heritage Spotlight -->
+    <section id="featured" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Iconic Heritage Sites</h2>
+            <p class="section-subtitle">Timeless monuments that tell the story of India.</p>
+
+            <div class="grid-cards">
+                <!-- Card 1 -->
+                <div class="heritage-card">
+                    <div class="card-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2071&auto=format&fit=crop');">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Taj Mahal</h3>
+                        <p>An immense mausoleum of white marble, built in Agra between 1631 and 1648.</p>
+                        <a href="#" class="card-link">Explore Details &rarr;</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="heritage-card">
+                    <div class="card-image"
+                        style="background-image: url('https://imgs.search.brave.com/cQmkZhCYQiBFxq2FL0mlCk2JOsvVMtt6DyDZFC8fhDU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM0/MzY5ODc0OC9waG90/by9hbmNpZW50LXN0/b25lLXJ1aW5zLWF0/LWhhbXBpLWthcm5h/dGFrYS1pbmRpYS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/dlBUckd2ZDNzVE5T/ZlNvTmxOVTN4ak42/ckM3R3hrRjdXYi12/M0U3YkxGbz0');">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Hampi</h3>
+                        <p>The last great Hindu kingdom of South India, a UNESCO World Heritage Site.</p>
+                        <a href="#" class="card-link">Explore Details &rarr;</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="heritage-card">
+                    <div class="card-image"
+                        style="background-image: url('https://imgs.search.brave.com/AhfTe0WisZmemeu-BE2owOKAxsqw5CRpwugAhKvgucs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzQ1LzQwLzEz/LzM2MF9GXzU0NTQw/MTMyOF9iNGRranNu/NUNDTnB3RjVmTG1J/ZVNJN3pIZUZHTEI5/MC5qcGc');">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Konark Sun Temple</h3>
+                        <p>A monumental representation of the sun god Surya's chariot.</p>
+                        <a href="#" class="card-link">Explore Details &rarr;</a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="heritage-card">
+                    <div class="card-image"
+                        style="background-image: url('https://imgs.search.brave.com/cuDAbwFe23mKPWoiqAxGD7WVi7__0pwlu97_incAvL0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi83MDE5/Mjk4Ny9raGFqdXJh/aG8uanBnP3dpZHRo/PTYzNiZoZWlnaHQ9/MzU4JnJlc2l6ZT00');">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Khajuraho</h3>
+                        <p>Famous for their nagara-style architectural symbolism and erotic sculptures.</p>
+                        <a href="#" class="card-link">Explore Details &rarr;</a>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="heritage-card">
+                    <div class="card-image"
+                        style="background-image: url('https://imgs.search.brave.com/r1xZNMJHxuYNxWPp_yq8Mmdr7g5uOta_SvgolYfC8RA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hcGku/dGhlaW5kaWEuY28u/aW4vc3RvcmFnZS9p/bWFnZS9wbGFjZXMv/aW1hZ2UvZ2F0ZXdh/eS1vZi1pbmRpYS05/NDgyMTkuanBn');">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Gateway of India</h3>
+                        <p>The arch-monument built in the early 20th century in the city of Mumbai.</p>
+                        <a href="#" class="card-link">Explore Details &rarr;</a>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="heritage-card">
+                    <div class="card-image"
+                        style="background-image: url('https://imgs.search.brave.com/hLT_N9uQ-RnXBtk6vpXgYnmDZ5UqF_cUYatLJhWo8pM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi8xMDM5/ODM2NDAvR3dhbGlv/ci1Gb3J0LUd3YWxp/b3IuanBnP3dpZHRo/PTYzNiZoZWlnaHQ9/MzU4JnJlc2l6ZT00');">
+                    </div>
+                    <div class="card-overlay">
+                        <h3>Gwalior Fort</h3>
+                        <p>An impenetrable fortress referred to as "the pearl amongst fortresses in India".</p>
+                        <a href="#" class="card-link">Explore Details &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Heritage Sites Section -->
+    <section id="heritage-list" class="sites-section">
+        <div class="container">
+            <div class="map-header">
+                <h2 class="section-title">Heritage Sites of India</h2>
+                <p class="section-subtitle">Explore India’s cultural legacy — verified UNESCO sites and other
+                    historically significant landmarks.</p>
+            </div>
+
+            <!-- UNESCO Grid -->
+            <h3 class="subsection-title" style="text-align:center; margin-top: 3rem; font-size: 1.8rem;">UNESCO World
+                Heritage Sites</h3>
+            <div class="sites-grid" id="unesco-grid"></div>
+
+            <!-- Other Grid -->
+            <h3 class="subsection-title" style="text-align:center; margin-top: 4rem; font-size: 1.8rem;">Other Important
+                Heritage Sites</h3>
+            <div class="sites-grid" id="other-grid"></div>
+        </div>
+    </section>
+
+    <!-- Detail View Overlay -->
+    <div id="detail-overlay" class="detail-overlay">
+        <button id="close-overlay" class="close-btn">&times;</button>
+        <div class="detail-hero" id="detail-hero"></div>
+        <div class="container detail-content">
+            <div class="detail-header">
+                <span id="detail-badge" class="detail-badge">UNESCO World Heritage</span>
+                <h2 id="detail-title">Site Name</h2>
+                <p id="detail-location" class="detail-location"><i class="location-icon"></i> Location</p>
+            </div>
+            <div class="detail-body">
+                <div class="detail-text">
+                    <h3>Historical Significance</h3>
+                    <p id="detail-description">Description goes here...</p>
+
+                    <h3>Cultural Importance</h3>
+                    <p id="detail-importance">Importance goes here...</p>
+                </div>
+                <div class="detail-sidebar">
+                    <div class="quick-facts">
+                        <h4>Quick Facts</h4>
+                        <ul>
+                            <li><strong>Built:</strong> <span id="detail-built">16th Century</span></li>
+                            <li><strong>Architect:</strong> <span id="detail-architect">Unknown</span></li>
+                            <li><strong>Visitors:</strong> <span id="detail-visitors">2M+ / Year</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Map Section -->
+    <section id="map" class="map-section">
+        <div class="container">
+            <div class="map-header">
+                <h2 class="section-title">India’s Living Cultural Heritage Map</h2>
+                <p class="section-subtitle">Verified UNESCO World Heritage Sites across India</p>
+            </div>
+
+            <div class="map-wrapper">
+                <div id="heritage-map" class="map-container"></div>
+
+                <div class="map-legend">
+                    <span class="legend-item"><span class="dot cultural"></span> Cultural Heritage</span>
+                    <span class="legend-item"><span class="dot natural"></span> Natural Heritage</span>
+                </div>
+            </div>
+
+            <p class="data-source">Source: UNESCO World Heritage Convention</p>
+        </div>
+    </section>
+
+
+
+    <!-- Did You Know Section -->
+    <section class="facts-section">
+        <div class="container">
+            <h2 class="section-title">Did You Know? | India’s Heritage in Facts</h2>
+            <p class="section-subtitle">Unveiling the scale and magnitude of our cultural legacy.</p>
+
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="fact-icon">🏛️</div>
+                    <p class="fact-text">India is home to <strong>44 UNESCO World Heritage Sites</strong>, reflecting
+                        millennia of history.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">⏳</div>
+                    <p class="fact-text">Some heritage sites in India are over <strong>2,000 years old</strong>,
+                        standing as timeless witnesses.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🌍</div>
+                    <p class="fact-text">Heritage tourism attracts <strong>millions of visitors</strong> every year from
+                        across the globe.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">💰</div>
+                    <p class="fact-text">Iconic monuments like the Taj Mahal generate over <strong>₹100 crore</strong>
+                        in revenue annually.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Interesting Facts Section -->
+    <section id="story" class="facts-section"
+        style="padding-top: 0; background: linear-gradient(135deg, #fff 0%, #FDFBF7 100%);">
+        <div class="container">
+            <h2 class="section-title">More Hidden Gems & Facts</h2>
+            <p class="section-subtitle">Beyond the famous monuments lies a world of engineering marvels.</p>
+
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="fact-icon">🧗</div>
+                    <p class="fact-text"><strong>Kumbhalgarh Fort</strong> has the second-longest wall in the world
+                        after the Great Wall of China, extending over <strong>36 km</strong>.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🛕</div>
+                    <p class="fact-text">The <strong>Kailasa Temple</strong> at Ellora is the largest monolithic
+                        structure in the world, carved from a <strong>single rock</strong> top-down.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🌳</div>
+                    <p class="fact-text">Meghalaya's <strong>Living Root Bridges</strong> are not built but grown by
+                        training rubber tree roots over centuries.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">💧</div>
+                    <p class="fact-text"><strong>Rani ki Vav</strong> is an inverted temple-style stepwell designed to
+                        emphasize the sanctity of water.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Immersive Experience Preview -->
+    <section id="immersive" class="immersive-section">
+        <div class="immersive-bg-video">
+            <!-- Placeholder for video background, using static image for now -->
+            <div class="video-overlay"></div>
+        </div>
+        <div class="immersive-content">
+            <h2>Walk through history — virtually.</h2>
+            <p>Experience 360° tours and AR reconstructions of lost temples.</p>
+            <button class="btn-primary btn-large">Enter Virtual Tour (Demo)</button>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="donation-section">
+        <div class="container">
+            <div class="donation-card">
+                <h2>Preserving heritage is preserving identity.</h2>
+                <p>Your contribution helps digitize archives and support conservation efforts.</p>
+                <div class="donation-buttons">
+                    <button class="btn-primary">Donate Now</button>
+                    <button class="btn-outline">Become a Member</button>
+                </div>
+                <small>Funds are transparently used for AI preservation projects.</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+        <div class="container trust-grid">
+            <span>Verified Cultural Archives</span>
+            <span class="separator">•</span>
+            <span>Digital India Initiative (Concept)</span>
+            <span class="separator">•</span>
+            <span>Educational Partner: UNESCO (Demo)</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>HeritageIndia</h3>
+                <p>Digitally preserving the past for the future.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#map">Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Digital Cultural Heritage Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
